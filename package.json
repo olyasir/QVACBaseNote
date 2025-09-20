@@ -1,0 +1,41 @@
+{
+  "name": "essential-oil-scent-blender",
+  "version": "1.0.0",
+  "description": "AI-powered essential oil blending application using @tetherto/llm-llamacpp",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"Run: bare scentBlenderBare.js 'lavender,bergamot' 'test blend'\" && exit 0"
+  },
+  "keywords": [
+    "essential-oils",
+    "aromatherapy",
+    "ai",
+    "llm",
+    "perfumery",
+    "scent-blending",
+    "tetherto",
+    "qvac"
+  ],
+  "author": "Claude Code",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "bare": ">=1.17.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "dependencies": {
+    "@tetherto/llm-llamacpp": "^2.6.1",
+    "@tetherto/qvac-lib-dl-hyperdrive": "^2.2.1",
+    "@tetherto/qvac-sdk": "^0.0.1-dev.1757684921.6b1b31e",
+    "bare-process": "^4.2.1",
+    "corestore": "^7.4.5",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mime-db": "^1.54.0"
+  }
+}
