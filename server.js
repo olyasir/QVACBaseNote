@@ -26,6 +26,40 @@ app.use(express.json());            // Parse JSON request bodies
 app.use(express.static('public'));  // Serve static files from public/
 
 // ============================================================================
+// SCENT EMBEDDINGS VISUALIZATION
+// ============================================================================
+
+// API endpoint to get embeddings data
+app.get('/api/embeddings/data', (req, res) => {
+  try {
+    const ScentEmbeddings = require('./scentEmbeddings');
+    const scentViz = new ScentEmbeddings();
+    const data = scentViz.generateVisualizationData();
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+});
+
+// API endpoint to get LLM embeddings data
+app.get('/api/embeddings/llm-data', async (req, res) => {
+  try {
+    const LLMScentEmbeddings = require('./llmScentEmbeddings');
+    const llmViz = new LLMScentEmbeddings();
+    const data = await llmViz.generateVisualizationData();
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+});
+
+// ============================================================================
 // ESSENTIAL OILS DATABASE
 // ============================================================================
 
